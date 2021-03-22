@@ -81,10 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'djitter',
-        'USER': 'lucas',
-        'PASSWORD': '353971',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -134,6 +134,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+DISABLE_COLLECTSTATIC=1
 
 import dj_database_url 
 
