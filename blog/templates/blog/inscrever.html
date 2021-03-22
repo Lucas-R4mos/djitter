@@ -13,9 +13,9 @@
     {% csrf_token %}
     {% if user_error %}<small class='error'>{{ user_error }}</small><br />{% endif %}
     <label htmlFor="user">Usuário:</label><br />
-    <input type="text" name="user" id="user" placeholder='Usuário' /><br />
+    <input type="text" name="user" id="user" placeholder='Usuário' required /><br />
     <label htmlFor="password">Senha:</label><br />
-    <input type="password" name="password" id="password" placeholder='Senha' /><br /><br />
+    <input type="password" name="password" id="password" placeholder='Senha' required /><br /><br />
     <button type="submit">Avançar</button>
 </form>
 {% endblock main %}

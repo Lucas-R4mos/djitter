@@ -12,9 +12,9 @@
 <form action={% url 'blog:inscrever2' %} class='registerForm2' method="post">
     {% csrf_token %}
     <label htmlFor="firstName">Nome:</label><br />
-    <input type="text" name="firstName" id="firstName" placeholder='Nome' /><br />
+    <input type="text" name="firstName" id="firstName" placeholder='Nome' required /><br />
     <label htmlFor="lastName">Sobrenome:</label><br />
-    <input type="text" name="lastName" id="lastName" placeholder='Sobrenome' /><br /><br />
+    <input type="text" name="lastName" id="lastName" placeholder='Sobrenome' required /><br /><br />
     <button type="submit">Avançar</button>
 </form>
 {% endblock main %}
