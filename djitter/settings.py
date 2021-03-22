@@ -135,8 +135,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-DISABLE_COLLECTSTATIC=1
-
 import dj_database_url 
 
 DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
