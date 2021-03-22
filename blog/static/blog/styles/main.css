@@ -1,0 +1,31 @@
+button.b-login {
+    background-color: var(--color-green-lighter);
+    color: var(--color-caramel);
+    margin-right: 0.8rem;
+    transition: 0.3s;
+}
+
+button.b-login:hover {
+    background-color: var(--color-green-light);
+    color: black;
+}
+
+button.b-register {
+    background-color: var(--color-caramel);
+    transition: 0.3s;
+}
+
+button.b-register:hover {
+    background-color: var(--color-caramel-light);
+    color: black;
+}
+
+main h1.landingH1 {
+    line-height: 50px;
+}
+
+main p.landingP {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    line-height:30px;
+}

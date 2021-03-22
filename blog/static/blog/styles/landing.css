@@ -1,0 +1,75 @@
+:root {
+    --color-green-main: #3E897B;
+    --color-green-light: #9BAF88;
+    --color-green-lighter: #D6E2B9;
+    --color-caramel: #803D21;
+    --color-caramel-light: #B59F80;
+    font-size: 24px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    background-color: var(--color-green-main);
+    color: white;
+
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+button {
+    font-family: 'RocknRoll One', sans-serif;
+    height: 60px;
+    width: 160px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+#landing {
+    height: calc(100vh - 3rem);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+}
+
+#landing .landingLogo img {
+    height: 300px;
+}
+
+#landing main {
+    padding-left: 2rem;
+    width: 400px;
+}
+
+footer.landingFooter {
+    background-color: var(--color-caramel-light);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    height: 3rem;
+    border-radius: 20px 20px 0 0;
+}

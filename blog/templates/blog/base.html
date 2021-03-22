@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href={% static 'blog/images/logo.png' %} type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={% static 'blog/styles/base.css' %}>
+    <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+    {% block extrahead %}{% endblock extrahead %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <div id='Base'>
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a class='link' href={% url 'blog:home' %}>
+                            <img src={% static 'blog/images/logo.png' %} alt="Djitter" /><span>Djitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class='link' href={% url 'blog:home' %}>
+                            <i class="fas fa-home"></i><span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class='link' href={% url 'blog:perfil' loggedUser.username %}>
+                            <i class="fas fa-user"></i><span>Perfil</span>
+                        </a>
+                    </li>
+                    {% block extranav %}
+                    {% endblock extranav %}
+                    <li>
+                        <a class='link' href={% url 'blog:logout' %}>
+                            <i class="fas fa-door-open"></i><span>Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p>Sobre o Djitter</p>
+            </footer>
+        </aside>
+        <main>
+            <header>
+                <h1>{% block page_title %}{% endblock page_title %}</h1>
+            </header>
+            <div class='content'>
+                {% block content %}{% endblock content %}
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

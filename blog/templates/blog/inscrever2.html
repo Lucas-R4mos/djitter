@@ -1,0 +1,20 @@
+{% extends 'blog/landing.html' %}
+
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href={% static 'blog/styles/login.css' %}> {% endblock extracss %}
+
+{% block title %}Djitter / Inscrever-se{% endblock title %}
+
+{% block main %}
+<h2 class='landingH1'>Diga-nos o seu nome, {{ user.username }} :)</h2>
+<form action={% url 'blog:inscrever2' %} class='registerForm2' method="post">
+    {% csrf_token %}
+    <label htmlFor="firstName">Nome:</label><br />
+    <input type="text" name="firstName" id="firstName" placeholder='Nome' /><br />
+    <label htmlFor="lastName">Sobrenome:</label><br />
+    <input type="text" name="lastName" id="lastName" placeholder='Sobrenome' /><br /><br />
+    <button type="submit">Avançar</button>
+</form>
+{% endblock main %}

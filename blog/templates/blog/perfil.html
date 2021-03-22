@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href={% static 'blog/styles/home.css' %}>
+{% endblock extrahead %}
+
+{% block title %}Djitter / {{ user.username }}{% endblock title %}
+
+{% block page_title %}{{ user.username }}{% endblock page_title %}
+
+{% block extranav %}
+    {% if profileOwner %}
+        <li>
+            <a class='link' href="">
+                <i class="fas fa-user-edit"></i><span>Editar</span>
+            </a>
+        </li>
+    {% endif %}
+{% endblock extranav %}
+
+{% block content %}
+    <article>
+        <p><em>{{ user.first_name }} {{ user.last_name }}</em></p>
+        <p>"{{ profile.bio }}"</p>
+    </article>
+    {% if posts %}
+        {% for post in posts %}
+            <article>
+                <h4><a href={% url 'blog:perfil' post.author %}>@{{ post.author }}<span>
+                </a> - {{ post.timestamp }}</span></h4>
+                <p>{{ post.content }}</p>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

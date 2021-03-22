@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href={% static 'blog/images/logo.png' %} type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={% static 'blog/styles/landing.css' %}>
+    {% block extracss %}{% endblock extracss %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div id='landing'>
+        <div class='landingLogo'>
+            <img src={% static 'blog/images/logo.png' %} alt="Djitter"/>
+        </div>
+        <main>
+            {% block main %}{% endblock main %}
+        </main>
+    </div>
+    <footer class='landingFooter'>
+        <p class='landingP'>
+            Djitter - Rede social experimental criada 
+            por <a href="https://github.com/Lucas-R4mos">Lucas Ramos</a> usando Django
+        </p>
+    </footer>
+</body>
+</html>

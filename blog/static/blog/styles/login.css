@@ -1,0 +1,35 @@
+.loginForm, .registerForm {
+    padding-top: 1rem;
+}
+
+form input, form textarea {
+    font-family: 'RocknRoll One', sans-serif;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    transition: 0.3s;
+    box-sizing: border-box;
+    resize: none;
+}
+
+form input:focus {
+    background-color: var(--color-green-lighter);
+    color: var(--color-caramel);
+}
+
+form button {
+    background-color: var(--color-green-lighter);
+    color: var(--color-caramel);
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: var(--color-green-light);
+    color: black;
+}
+
+form .error {
+    color: black;
+    font-size: 0.7rem;
+}

@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href={% static 'blog/styles/home.css' %}>
+{% endblock extrahead %}
+
+{% block title %}Djitter / Home{% endblock title %}
+
+{% block page_title %}Bem vindo, {{ loggedUser.username }}{% endblock page_title %}
+
+{% block content %}
+<form id='CreatePostForm' method="POST" action={% url 'blog:novoPost' %}>
+    {% csrf_token %}
+    <label for="content">
+        <textarea name="content" id="content" placeholder='O que está acontecendo?'
+        maxLength='280' required rows='5' cols='40' ></textarea>
+    </label>
+    <button class='CreatePost' type="submit">Postar</button>
+</form>
+
+{% if posts %}
+{% for post in posts %}
+<article>
+    <h4><a href={% url 'blog:perfil' post.author %}>@{{ post.author }}<span></a> - {{ post.timestamp }}</span></h4>
+    <p>{{ post.content }}</p>
+</article>
+{% endfor %}
+{% else %}
+<article>
+    <p>Faça o primeiro post! :)</p>
+</article>
+{% endif %}
+{% endblock content %}
