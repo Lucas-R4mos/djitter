@@ -26,7 +26,7 @@ SECRET_KEY = 'by@k-bom*b@vl4u$dn1sp#(ae&#xbc3%1^+*dhi)-8i32+#%3k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['djitter-lr.herokuapp.com']
+ALLOWED_HOSTS = ['https://djitter-lr.herokuapp.com']
 
 
 # Application definition
