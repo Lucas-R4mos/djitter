@@ -124,11 +124,15 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Add configuration for static files storage using whitenoise
+# Solução para Erro 500 do Django/Heroku/Whitenoise 
+# https://stackoverflow.com/questions/52311724/500-error-when-debug-false-with-heroku-and-django
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
