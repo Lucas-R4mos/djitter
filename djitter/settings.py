@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRETKEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['djitter-lr.herokuapp.com']
 
@@ -134,7 +134,8 @@ STATIC_URL = '/static/'
 # Solução para Erro 500 do Django/Heroku/Whitenoise 
 # https://stackoverflow.com/questions/52311724/500-error-when-debug-false-with-heroku-and-django
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Comentar STATICFILES_STORAGE pra voltar a tentativa de arrumar o debug = false
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 # Extra lookup directories for collectstatic to find static files
